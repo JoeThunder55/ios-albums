@@ -17,14 +17,41 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="71C-3g-VfT">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="71C-3g-VfT" id="ugC-ea-iyz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N0Q-oP-dZe">
+                                            <rect key="frame" x="5" y="0.0" width="404" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejp-Ax-jgQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="404" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMn-IC-ozy">
+                                                    <rect key="frame" x="0.0" y="21" width="404" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="N0Q-oP-dZe" secondAttribute="trailing" constant="5" id="1A9-T6-OJb"/>
+                                        <constraint firstAttribute="bottom" secondItem="N0Q-oP-dZe" secondAttribute="bottom" id="1Yd-UL-Hyj"/>
+                                        <constraint firstItem="N0Q-oP-dZe" firstAttribute="leading" secondItem="ugC-ea-iyz" secondAttribute="leading" constant="5" id="3tr-2P-vsj"/>
+                                        <constraint firstItem="N0Q-oP-dZe" firstAttribute="top" secondItem="ugC-ea-iyz" secondAttribute="top" id="c0a-HY-0gz"/>
+                                        <constraint firstItem="N0Q-oP-dZe" firstAttribute="centerX" secondItem="ugC-ea-iyz" secondAttribute="centerX" id="eSH-gm-Hny"/>
+                                        <constraint firstItem="N0Q-oP-dZe" firstAttribute="centerY" secondItem="ugC-ea-iyz" secondAttribute="centerY" id="k69-kl-Kds"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ip3-pZ-BZE"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToAlbumDetail" modalPresentationStyle="pageSheet" id="ip3-pZ-BZE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -33,7 +60,13 @@
                             <outlet property="delegate" destination="cAL-xv-2IG" id="tY1-d2-XU6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Albums" id="oO2-gS-Pk8"/>
+                    <navigationItem key="navigationItem" title="Albums" id="oO2-gS-Pk8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Thn-eG-vfd">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToCurrentAlbum" modalPresentationStyle="automatic" id="zTD-BB-F00"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkJ-oy-UK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,16 +88,42 @@
             </objects>
             <point key="canvasLocation" x="-1288" y="116"/>
         </scene>
-        <!--New Album-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Albums" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-SU-8Ko">
+                                <rect key="frame" x="10" y="0.0" width="404" height="39.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT5-wf-7nU">
+                                <rect key="frame" x="132" y="408" width="150" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="53h-Yz-UDx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="I0j-ke-5A4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Add Song">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dys-XM-0q4">
+                                <rect key="frame" x="0.0" y="793" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="gTp-cb-A7d"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HX8-5r-H5L"/>
+                                    <barButtonItem title="Save" id="TZc-O6-UQH"/>
+                                </items>
+                            </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ced-Yb-5bU">
-                                <rect key="frame" x="10" y="150" width="394" height="303.5"/>
+                                <rect key="frame" x="10" y="54.5" width="394" height="303.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Album Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1x-9O-jVZ">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
@@ -107,13 +166,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ced-Yb-5bU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dAH-i8-Pz2"/>
+                            <constraint firstItem="ib1-SU-8Ko" firstAttribute="leading" secondItem="ced-Yb-5bU" secondAttribute="leading" id="1gb-0n-nqr"/>
+                            <constraint firstItem="ced-Yb-5bU" firstAttribute="firstBaseline" secondItem="ib1-SU-8Ko" secondAttribute="firstBaseline" id="Bfq-g3-LUu"/>
+                            <constraint firstItem="rT5-wf-7nU" firstAttribute="top" secondItem="ced-Yb-5bU" secondAttribute="bottom" constant="50" id="ETl-aZ-mJb"/>
+                            <constraint firstAttribute="bottom" secondItem="Dys-XM-0q4" secondAttribute="bottom" id="HKq-NQ-eN3"/>
+                            <constraint firstItem="ced-Yb-5bU" firstAttribute="top" secondItem="ib1-SU-8Ko" secondAttribute="bottom" constant="15" id="MEo-f7-6Ce"/>
+                            <constraint firstItem="rT5-wf-7nU" firstAttribute="centerX" secondItem="ced-Yb-5bU" secondAttribute="centerX" id="Nr5-pX-bWe"/>
+                            <constraint firstItem="ib1-SU-8Ko" firstAttribute="trailing" secondItem="Dys-XM-0q4" secondAttribute="trailing" id="Q75-Kl-ct5"/>
+                            <constraint firstAttribute="trailing" secondItem="Dys-XM-0q4" secondAttribute="trailing" id="URL-HB-12F"/>
+                            <constraint firstItem="ib1-SU-8Ko" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="az0-To-u3T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ced-Yb-5bU" secondAttribute="trailing" constant="10" id="enn-x1-uvb"/>
+                            <constraint firstItem="Dys-XM-0q4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oiZ-zT-esC"/>
                             <constraint firstItem="ced-Yb-5bU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="qo5-Tn-VlC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Album" id="C8u-Hj-AEf">
+                    <navigationItem key="navigationItem" id="C8u-Hj-AEf">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aN9-m4-E92"/>
                     </navigationItem>
                 </viewController>
@@ -122,4 +190,7 @@
             <point key="canvasLocation" x="464" y="116"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ip3-pZ-BZE"/>
+    </inferredMetricsTieBreakers>
 </document>
