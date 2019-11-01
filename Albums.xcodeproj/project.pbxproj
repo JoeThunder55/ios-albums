@@ -12,9 +12,9 @@
 		D7AEAEED236A7D0F0047B77A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7AEAEEB236A7D0F0047B77A /* Main.storyboard */; };
 		D7AEAEEF236A7D120047B77A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AEAEEE236A7D120047B77A /* Assets.xcassets */; };
 		D7AEAEF2236A7D120047B77A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7AEAEF0236A7D120047B77A /* LaunchScreen.storyboard */; };
-		D7AEAEFE236A89640047B77A /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEAEFD236A89640047B77A /* AlbumTableViewCell.swift */; };
 		D7AEAF00236A89800047B77A /* DetailAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEAEFF236A89800047B77A /* DetailAddViewController.swift */; };
 		D7AEAF02236A89B70047B77A /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEAF01236A89B70047B77A /* AlbumTableViewCell.swift */; };
+		D7AEAF04236A8B6C0047B77A /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEAF03236A8B6C0047B77A /* AlbumTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		D7AEAEEE236A7D120047B77A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7AEAEF1236A7D120047B77A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7AEAEF3236A7D120047B77A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7AEAEFD236A89640047B77A /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		D7AEAEFF236A89800047B77A /* DetailAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddViewController.swift; sourceTree = "<group>"; };
 		D7AEAF01236A89B70047B77A /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		D7AEAF03236A8B6C0047B77A /* AlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +76,8 @@
 		D7AEAEFA236A875A0047B77A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D7AEAEFD236A89640047B77A /* AlbumTableViewCell.swift */,
 				D7AEAEFF236A89800047B77A /* DetailAddViewController.swift */,
+				D7AEAF03236A8B6C0047B77A /* AlbumTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 			files = (
 				D7AEAF02236A89B70047B77A /* AlbumTableViewCell.swift in Sources */,
 				D7AEAEE6236A7D0F0047B77A /* AppDelegate.swift in Sources */,
+				D7AEAF04236A8B6C0047B77A /* AlbumTableViewController.swift in Sources */,
 				D7AEAEE8236A7D0F0047B77A /* SceneDelegate.swift in Sources */,
-				D7AEAEFE236A89640047B77A /* AlbumTableViewCell.swift in Sources */,
 				D7AEAF00236A89800047B77A /* DetailAddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
